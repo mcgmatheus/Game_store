@@ -9,4 +9,7 @@ class Product extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'price', 'description', 'cover'];
+    protected $casts = [
+        'price'=>'float'
+    ];
 }
