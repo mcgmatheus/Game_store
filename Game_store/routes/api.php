@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AvaliationController;
 use App\Http\Controllers\MarkerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductMarkerController;
@@ -18,3 +19,8 @@ Route::delete('markers/{id}', [MarkerController::class, 'destroy']);
 Route::post('product_markers', [ProductMarkerController::class, 'store']);
 Route::get('product_markers', [ProductMarkerController::class, 'index']);
 Route::delete('product_markers/{id}', [ProductMarkerController::class, 'destroy']);
+
+Route::post('avaliations', [AvaliationController::class, 'store']);
+Route::get('avaliations', [AvaliationController::class, 'index']);
+Route::put('avaliations/{id}', [AvaliationController::class, 'update']);
+Route::delete('avaliations/{id}', [AvaliationController::class, 'destroy']);
