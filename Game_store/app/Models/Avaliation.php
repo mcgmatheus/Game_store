@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Avaliation extends Model
 {
     use HasFactory;
+    protected $fillable = ['product_id', 'avaliation', 'recommended'];
 }
