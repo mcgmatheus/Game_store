@@ -35,7 +35,7 @@ class MarkerController extends Controller
             $marker->delete();
             return response()->json(['message' => 'Marcador deletado'], 200);
         } catch (ModelNotFoundException $exception) {
-            return response()->json(['message' => 'Produto não encontrado'], 404);
+            return response()->json(['message' => 'Marcador não encontrado'], 404);
         } catch (Exception $exception){
             return response()->json(['message' => $exception->getMessage()], 400);
         }
