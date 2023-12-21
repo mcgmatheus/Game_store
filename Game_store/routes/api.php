@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AvaliationController;
 use App\Http\Controllers\MarkerController;
+use App\Http\Controllers\ProductAssetController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductMarkerController;
 use App\Models\ProductAsset;
@@ -26,7 +27,7 @@ Route::get('avaliations', [AvaliationController::class, 'index']);
 Route::put('avaliations/{id}', [AvaliationController::class, 'update']);
 Route::delete('avaliations/{id}', [AvaliationController::class, 'destroy']);
 
-Route::post('assets', [ProductAsset::class, 'store']);
-Route::get('assets', [ProductAsset::class, 'index']);
-Route::put('assets/{id}', [ProductAsset::class, 'update']);
-Route::delete('assets/{id}', [ProductAsset::class, 'destroy']);
+Route::post('assets', [ProductAssetController::class, 'store']);
+Route::get('assets', [ProductAssetController::class, 'index']);
+Route::put('assets/{id}', [ProductAssetController::class, 'update']);
+Route::delete('assets/{id}', [ProductAssetController::class, 'destroy']);
