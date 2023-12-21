@@ -4,6 +4,7 @@ use App\Http\Controllers\AvaliationController;
 use App\Http\Controllers\MarkerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductMarkerController;
+use App\Models\ProductAsset;
 use Illuminate\Support\Facades\Route;
 
 Route::post('products',[ProductController::class,'store']);
@@ -24,3 +25,8 @@ Route::post('avaliations', [AvaliationController::class, 'store']);
 Route::get('avaliations', [AvaliationController::class, 'index']);
 Route::put('avaliations/{id}', [AvaliationController::class, 'update']);
 Route::delete('avaliations/{id}', [AvaliationController::class, 'destroy']);
+
+Route::post('assets', [ProductAsset::class, 'store']);
+Route::get('assets', [ProductAsset::class, 'index']);
+Route::put('assets/{id}', [ProductAsset::class, 'update']);
+Route::delete('assets/{id}', [ProductAsset::class, 'destroy']);
