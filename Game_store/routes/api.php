@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\AvaliationController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MarkerController;
 use App\Http\Controllers\ProductAssetController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductMarkerController;
-use App\Models\ProductAsset;
 use Illuminate\Support\Facades\Route;
 
 Route::post('products',[ProductController::class,'store']);
@@ -31,3 +31,8 @@ Route::post('assets', [ProductAssetController::class, 'store']);
 Route::get('assets', [ProductAssetController::class, 'index']);
 Route::put('assets/{id}', [ProductAssetController::class, 'update']);
 Route::delete('assets/{id}', [ProductAssetController::class, 'destroy']);
+
+Route::post('category', [CategoryController::class, 'store']);
+Route::get('category', [CategoryController::class, 'index']);
+Route::put('category/{id}', [CategoryController::class, 'update']);
+Route::delete('category/{id}', [CategoryController::class, 'destroy']);
