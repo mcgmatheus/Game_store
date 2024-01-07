@@ -1,19 +1,50 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\AchievementController;
+use App\Http\Controllers\AvaliationController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MarkerController;
+use App\Http\Controllers\ProductAssetController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductMarkerController;
+use App\Http\Controllers\ProductRequirementController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
+Route::post('products', [ProductController::class, 'store']);
+Route::get('products', [ProductController::class, 'index']);
+Route::get('products/{id}', [ProductController::class, 'show']);
+Route::put('products/{id}', [ProductController::class, 'update']);
+Route::delete('products/{id}', [ProductController::class, 'destroy']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('markers', [MarkerController::class, 'store']);
+Route::get('markers', [MarkerController::class, 'index']);
+Route::delete('markers/{id}', [MarkerController::class, 'destroy']);
+
+Route::post('product_markers', [ProductMarkerController::class, 'store']);
+Route::get('product_markers', [ProductMarkerController::class, 'index']);
+Route::delete('product_markers/{id}', [ProductMarkerController::class, 'destroy']);
+
+Route::post('avaliations', [AvaliationController::class, 'store']);
+Route::get('avaliations', [AvaliationController::class, 'index']);
+Route::put('avaliations/{id}', [AvaliationController::class, 'update']);
+Route::delete('avaliations/{id}', [AvaliationController::class, 'destroy']);
+
+Route::post('assets', [ProductAssetController::class, 'store']);
+Route::get('assets', [ProductAssetController::class, 'index']);
+Route::put('assets/{id}', [ProductAssetController::class, 'update']);
+Route::delete('assets/{id}', [ProductAssetController::class, 'destroy']);
+
+Route::post('category', [CategoryController::class, 'store']);
+Route::get('category', [CategoryController::class, 'index']);
+Route::put('category/{id}', [CategoryController::class, 'update']);
+Route::delete('category/{id}', [CategoryController::class, 'destroy']);
+
+Route::post('achievements', [AchievementController::class, 'store']);
+Route::get('achievements', [AchievementController::class, 'index']);
+Route::put('achievements/{id}', [AchievementController::class, 'update']);
+Route::delete('achievements/{id}', [AchievementController::class, 'destroy']);
+
+Route::post('requirements', [ProductRequirementController::class, 'store']);
+Route::get('requirements', [ProductRequirementController::class, 'index']);
+Route::put('requirements/{id}', [ProductRequirementController::class, 'update']);
+Route::delete('requirements/{id}', [ProductRequirementController::class, 'destroy']);
